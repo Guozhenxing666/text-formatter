@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "head.h"
 #include <stdlib.h>
-#define WIDTH 50
+#define WIDTH 100
 int main()
 {
     FILE *f = fopen("test", "r");
@@ -30,19 +30,22 @@ int main()
         {
             pre_by_empln = 0;
         }
-        printf("%s", t);
-        fprintf(fout, "%s", t);
+        // printf("%s", t);
+        // fprintf(fout, "%s", t);
 
-        free(t);
-
-        char *w = word_wrap(t, WIDTH);
+        // char *w = word_wrap(t, WIDTH);
         // printf("\n\nAfter wrap:\n");
         // printf("%s", w);
 
         // free(t);
         // free(w);
+        char *w = word_wrap(t, WIDTH);
+        printf("%s", w);
+        fprintf(fout, "%s", w);
+        free(t);
+        free(w);
     }
-
+    printf("\n");
     fclose(f);
     fclose(fout);
     return 0;

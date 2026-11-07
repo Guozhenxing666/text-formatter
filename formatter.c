@@ -49,17 +49,17 @@ char *word_wrap(char *str, int width)
             {
                 res[last_j] = '\n';
                 count = count - last_count + 1;
-                res[j++] = str[i];
+                res[j++] = str[i++];
             }
         }
         else
         {
-            res[j++] = str[i];
             if (str[i] == ' ')
             {
                 last_j = j;
                 last_count = count;
             }
+            res[j++] = str[i++];
             count++;
         }
     }
